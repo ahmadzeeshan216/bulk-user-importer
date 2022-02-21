@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  include PasswordValidator
 
   REQUIRED_CSV_COLUMNS = [:name, :password]
 
