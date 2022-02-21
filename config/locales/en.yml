@@ -30,4 +30,12 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  user:
+    errors:
+      password:
+        change_chars:
+          one: "Change 1 character of %{name}'s Password"
+          other: "Change %{count} characters of %{name}'s Password"
+      csv_headers: Invalid CSV Headers
+    success:
+      creation: '%{name} was successfully saved'
