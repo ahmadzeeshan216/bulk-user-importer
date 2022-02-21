@@ -11,7 +11,7 @@ module Users
       @bulk_insert_attributes = Array.new
     end
 
-    def call
+    def call!
       validate_headers
       return if errors.any?
 

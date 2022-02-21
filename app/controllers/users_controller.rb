@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :set_bulk_importer, only: [:import]
 
   def import
-    unless @importer.call
+    unless @importer.call!
       flash[:error] = @importer.errors.messages.values.flatten.to_sentence
       redirect_to new_import_users_path
     end
