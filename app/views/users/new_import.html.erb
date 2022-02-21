@@ -1,4 +1,12 @@
-<%= form_tag(import_users_path, method: :post, multipart: true) do %>
-  <%= file_field_tag :file, required: true %>
-  <%= submit_tag "Import" %>
-<% end %>
+<div class="container mt-4">
+  <%= form_tag(import_users_path, method: :post, multipart: true) do %>
+    <div class="mb-3 row">
+      <%= label_tag :file, 'Select CSV File', class: 'form-label' %>
+      <%= file_field_tag :file, class: 'form-control', required: true %>
+    </div>
+
+    <div class="mb-3 row">
+      <%= submit_tag "Import", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

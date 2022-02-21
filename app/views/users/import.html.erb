@@ -1,3 +1,11 @@
-<% @importer.users.each do |user| %>
-  <%= pretty_creation_message(user) %>
-<% end %>
+<div class="container mt-5">
+  <ul>
+    <% @importer.users.each do |user| %>
+      <% if user.errors.any? %>
+        <li class="alert alert-danger"> <%= user.errors.full_messages.to_sentence %> </li>
+      <% else %>
+        <li class="alert alert-info"> <%= t('user.success.creation', name: user.name) %> </li>
+      <% end %>
+    <% end %>
+  <ul>
+</div>
